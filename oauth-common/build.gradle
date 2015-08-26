@@ -1,0 +1,35 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+	maven {
+		url "http://repo.spring.io/milestone"
+	}
+}
+
+dependencies {
+    compile("org.springframework.data:spring-data-jpa:1.7.1.RELEASE") {
+        exclude group: 'org.aspectj'
+        exclude group: 'org.springframework'
+    }
+    compile("org.springframework.security:spring-security-core:3.2.5.RELEASE") {
+        exclude group: 'org.springframework'
+    }
+    compile("org.hibernate:hibernate-entitymanager:4.3.7.Final")
+    compile("org.hibernate:hibernate-validator:5.0.3.Final")
+	compile("org.springframework.social:spring-social-security:1.1.0.RELEASE")
+	compile("org.springframework.social:spring-social-config:1.1.0.RELEASE")
+	compile("org.springframework.social:spring-social-facebook:1.1.0.RELEASE")
+	compile("org.springframework.social:spring-social-twitter:1.1.0.RELEASE")
+	compile("org.apache.commons:commons-lang3:3.3.2")
+	compile("org.springframework.social:spring-social-linkedin:1.0.0.RELEASE")
+	compile("org.springframework.social:spring-social-github:1.0.0.M4")
+	compile("org.springframework.social:spring-social-google:1.0.0.RELEASE")
+	compile("org.apache.commons:commons-lang3:3.3.2")
+	compile("org.springframework.social:spring-social-live:1.0.0-SNAPSHOT") {
+		exclude group: 'javax.servlet', module: 'servlet-api'
+	}
+}
