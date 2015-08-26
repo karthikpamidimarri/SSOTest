@@ -14,7 +14,6 @@ import org.springframework.social.connect.ConnectionFactoryLocator;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
-import org.springframework.social.github.connect.GitHubConnectionFactory;
 import org.springframework.social.google.connect.GoogleConnectionFactory;
 import org.springframework.social.linkedin.connect.LinkedInConnectionFactory;
 import org.springframework.social.security.AuthenticationNameUserIdSource;
@@ -50,10 +49,10 @@ public class SocialConfig implements SocialConfigurer {
         connectionFactoryConfigurer.addConnectionFactory(new GoogleConnectionFactory(
             environment.getProperty("spring.social.google.appId"),
             environment.getProperty("spring.social.google.appSecret")));
-        connectionFactoryConfigurer.addConnectionFactory(new GitHubConnectionFactory(
+        /*      connectionFactoryConfigurer.addConnectionFactory(new GitHubConnectionFactory(
             environment.getProperty("spring.social.github.appId"),
             environment.getProperty("spring.social.github.appSecret")));
-/*        connectionFactoryConfigurer.addConnectionFactory(new LiveConnectionFactory(
+        connectionFactoryConfigurer.addConnectionFactory(new LiveConnectionFactory(
             environment.getProperty("spring.social.live.appId"),
             environment.getProperty("spring.social.live.appSecret")));
 */    }
